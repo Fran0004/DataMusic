@@ -1,0 +1,44 @@
+#TopArtist{
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  min-height: 300vh;       /* altura de la ventana */
+  margin: 0;
+  position: sticky;
+  top: 50%;        
+}
+#contArtists {
+  overflow: hidden;          /* corta los que no caben */
+  width: 50vw;  
+  border: 1px solid aqua;
+  height: 300px;
+  display: flex;             /* flex para centrar horizontalmente la lista */
+  align-items: center;       /* centra verticalmente */
+}
+
+.lista {
+  display: flex;             /* lista horizontal */
+  gap: 20px;
+  margin-left: 5%;             /* separación entre items */
+  /* NO poner position absolute */
+  /* NO usar grid aquí */
+}
+.emptyItemList{
+  width: 500px;
+}
+.artist-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;     /* o row si quieres imagen + texto */
+  align-items: center;
+  gap: 10px;
+  width: 200px;               /* ancho fijo por item */
+}
+
+.artist-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
