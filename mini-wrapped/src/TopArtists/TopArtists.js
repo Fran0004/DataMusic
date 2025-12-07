@@ -10,7 +10,8 @@ function TopArtists() {
   const [artists, setArtist] = useState([]);
   const contRef = useRef(null);
   const listaRef = useRef(null);
-   const cardsRef = useRef([]);
+  const cardsRef = useRef([]);
+  const titleRef = useRef(null);
 
   useEffect(() => {
     axios.get('http://127.0.0.1:8000/top-artists')
@@ -18,45 +19,114 @@ function TopArtists() {
       .catch(err => console.error(err));
   }, []);
 
-  useLayoutEffect(() => {
-    if (artists.length === 0) return; // Evita correr antes de tiempo
+useLayoutEffect(() => {
+  if (artists.length === 0) return;
+
+  const calculate = () => {
     const listaWidth = listaRef.current.scrollWidth;
     const contWidth = contRef.current.offsetWidth;
     const maxScroll = listaWidth - contWidth;
+    return { listaWidth, contWidth, maxScroll };
+  };
 
-    let ctx = gsap.context(() => {
+  // Esperar a que todas las imágenes carguen
+  const imgs = listaRef.current.querySelectorAll("img");
+  let imagesLoaded = 0;
 
+  const checkAndInit = () => {
+    if (imagesLoaded !== imgs.length) return;
+
+    // Limpiar animaciones anteriores
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+    gsap.killTweensOf(listaRef.current);
+
+    // Recalcular tamaños REALES
+    const { maxScroll, contWidth } = calculate();
+
+    gsap.context(() => {
       gsap.to(listaRef.current, {
-      x: -maxScroll,             // mueve la lista a la izquierda hasta el final
-      ease: "none",
-      scrollTrigger: {
-        trigger: contRef.current,
-        start: "center center",
-        end: () => `+=${maxScroll}`, // duracion proporcional al contenido
-        scrub: 0.5,
-        pin: true,
-        onUpdate: self => {
-          const scroll = self.progress * maxScroll;
-          cardsRef.current.forEach(card => {
-            const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-            const contCenter = scroll + contWidth / 2;
-            const distance = Math.abs(contCenter - cardCenter);
-            const maxDistance = contWidth / 2;
-            const scale = gsap.utils.clamp(0.2, 1, 1 - distance / maxDistance * 0.8);
-            card.style.transform = `scale(${scale})`;
-          });
-        },   
-        markers: true
-      }
-    });
-    
-      ScrollTrigger.refresh();
+        x: -maxScroll,
+        ease: "none",
+        scrollTrigger: {
+          trigger: contRef.current,
+          start: "center center",
+          end: () => `+=${maxScroll}`,
+          scrub: 0.5,
+          pin: true,
+          markers: false,
+          onEnter: () => {
+            titleRef.current.style.opacity = 1;
+            contRef.current.style.opacity = 1;
+          },
+          onEnterBack: () => {
+            titleRef.current.style.opacity = 1;
+            contRef.current.style.opacity = 1;
+          },
+          onLeaveBack: () => {
+            titleRef.current.style.opacity = 0;
+            contRef.current.style.opacity = 0;
+
+          },
+          onUpdate: (self) => {
+            const scroll = self.progress * maxScroll;
+            cardsRef.current.forEach((card) => {
+              const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+              const contCenter = scroll + contWidth / 2;
+              const distance = Math.abs(contCenter - cardCenter);
+              const maxDistance = contWidth / 2;
+              const scale = gsap.utils.clamp(
+                0.2,
+                1,
+                1 - (distance / maxDistance) * 0.8
+              );
+              card.style.transform = `scale(${scale})`;
+                // Imagen dentro de la card
+              const imagen = card.querySelector("img");
+              if (imagen) {
+                // Cambia el box-shadow dinámicamente según la distancia (opcional)
+                const shadowIntensity = (1 - distance / maxDistance) * 100; // opcional
+                imagen.style.boxShadow = `0 0 ${shadowIntensity}px #d1bcdb94`;
+  }
+
+
+            });
+          },
+        },
+      });
     });
 
-    return () => ctx.revert(); // Limpia en desmontaje
-  }, [artists]); // <-- Se ejecuta cuando ya hay imágenes en el DOM
+    ScrollTrigger.refresh();
+  };
+
+  imgs.forEach((img) => {
+    if (img.complete) {
+      imagesLoaded++;
+    } else {
+      img.onload = () => {
+        imagesLoaded++;
+        checkAndInit();
+      };
+    }
+  });
+
+  // Si todas estaban cargadas desde el principio
+  checkAndInit();
+
+  // RE-CALCULAR AL RESIZE
+  const handleResize = () => {
+    checkAndInit();
+  };
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+  };
+}, [artists]);
 
   return (
+    <section>
+    <h1 id='title'  ref={titleRef} >🎧 Tus Top Artists</h1>
     <div id='TopArtist'>
       <div id='contArtists' ref={contRef}>
         <div className='lista' ref={listaRef} >
@@ -72,6 +142,7 @@ function TopArtists() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 

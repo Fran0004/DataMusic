@@ -1,44 +1,74 @@
+#contArtists {
+  overflow: hidden;          /* corta los que no caben */
+  /* border: 1px solid aqua; */
+  width: 100vw; 
+  height: 70vh;
+  display: flex;             /* flex para centrar horizontalmente la lista */
+  align-items: center;       /* centra verticalmente */
+  opacity: 0;
+   transition: opacity .4s ease;
+}
 #TopArtist{
   display: flex;
   justify-content: center; /* centra horizontalmente */
-  min-height: 300vh;       /* altura de la ventana */
+  height: 400vh;       /* altura de la ventana */
   margin: 0;
   position: sticky;
   top: 50%;        
 }
-#contArtists {
-  overflow: hidden;          /* corta los que no caben */
-  width: 50vw;  
-  border: 1px solid aqua;
-  height: 300px;
-  display: flex;             /* flex para centrar horizontalmente la lista */
-  align-items: center;       /* centra verticalmente */
-}
 
 .lista {
   display: flex;             /* lista horizontal */
-  gap: 20px;
+  gap: 1vw;
   margin-left: 5%;             /* separación entre items */
   /* NO poner position absolute */
   /* NO usar grid aquí */
 }
 .emptyItemList{
-  width: 500px;
+  width: 20vw;
 }
 .artist-card {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   padding: 10px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;     /* o row si quieres imagen + texto */
   align-items: center;
-  gap: 10px;
-  width: 200px;               /* ancho fijo por item */
+  /* gap: 10px;  */
+  width: 20vw;               /* ancho fijo por item */
 }
 
 .artist-card img {
-  width: 200px;
-  height: 200px;
+  width: 20vw;
+  height: 20vw;
   object-fit: cover;
   border-radius: 50%;
+  border: #7b7b7bd7 solid 0.5px;
+}
+#title{
+  position: sticky;
+  top: 5vh;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+@media screen and (max-width: 768px) {
+  #contArtists{
+    width: 100vw !important;
+    max-width: none;
+  }
+  #TopArtist{
+    height: 200vh;
+  }
+  .emptyItemList{
+    width: 25vw;
+  }
+  .artist-card img {
+    width: 40vw;
+    height: 40vw;
+    color: #e6afff94;
+  }
+  .artist-card{
+    width: 30vw;
+  }
 }
