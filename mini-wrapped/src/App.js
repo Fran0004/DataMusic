@@ -1,6 +1,6 @@
 import Title from './Title/Title';
 import TopArtists from './TopArtists/TopArtists';
-import TopTracks from './TopTracks';
+import TopTracks from './TopTracks/TopTracks';
 
 function App() {
   return (

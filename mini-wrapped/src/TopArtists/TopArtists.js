@@ -135,7 +135,7 @@ useLayoutEffect(() => {
             <div key={i} className="artist-card a" ref={el => (cardsRef.current[i+1] = el)}>
               <img src={a.images.url} alt={a.name} />
               <h2>{a.name}</h2>
-              {/* <h3>{a.genres.join(", ")}</h3> */}
+              <h3>{a.genres.join(", ")}</h3>
             </div>
           ))}
           <div className="emptyItemList  a"  ref={el => (cardsRef.current[artists.length + 1] = el)}></div>

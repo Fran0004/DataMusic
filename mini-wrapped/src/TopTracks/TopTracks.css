@@ -1,0 +1,50 @@
+#TopTrack{
+    display: flex;
+    justify-content: center;
+}
+.capsuleTrack{
+    width: 100%;
+    margin: 5%;
+}
+.track{
+    width: 40vw;
+    box-shadow: 0px 2px 17px 2px grey;
+    height: 25vh;
+    display: flex;
+    align-items: center;
+    columns: 3;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.divtrack{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 20px;
+}
+.imgTrack{
+    width: 10vw;
+}
+.divImg{
+    justify-content: flex-end;
+    display: flex;
+    width: 80%;
+    margin: 2%;
+}
+.divTextTrack{
+    margin: 2%;
+    width: auto;
+}
+#details{
+    font-size: 15px;
+}
+.numTrack{
+    background: linear-gradient(to right, #ffffff3d, #0000ff00);/* degradado izquierda → derecha */
+    -webkit-background-clip: text;  
+    color: transparent;      
+    font-size: 30vh;
+    margin: 0;
+    height: min-content;
+    align-items: center;
+    margin-top: 5%;
+    margin-right: 5%;
+}

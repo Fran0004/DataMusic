@@ -2,7 +2,7 @@
   overflow: hidden;          /* corta los que no caben */
   /* border: 1px solid aqua; */
   width: 100vw; 
-  height: 70vh;
+  height: 80vh;
   display: flex;             /* flex para centrar horizontalmente la lista */
   align-items: center;       /* centra verticalmente */
   opacity: 0;
@@ -56,9 +56,10 @@
   #contArtists{
     width: 100vw !important;
     max-width: none;
+    height: 70vh;
   }
   #TopArtist{
-    height: 200vh;
+    height: 300vh;
   }
   .emptyItemList{
     width: 25vw;

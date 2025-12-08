@@ -31,7 +31,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(
 def get_top_tracks():
     top_tracks = sp.current_user_top_tracks(limit=10)['items']
     # Solo enviar datos necesarios
-    result = [{"name": t['name'], "artist": t['artists'][0]['name'],"album": t['album'], "id": t['id']} for t in top_tracks]
+    result = [{"name": t['name'], "artists": t['artists'][0]['name'],"album": t['album'],"external_urls": t['external_urls']['spotify'], "id": t['id']} for t in top_tracks]
     return result
 
 @app.get("/top-artists")
