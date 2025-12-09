@@ -7,9 +7,9 @@
     margin: 5%;
 }
 .track{
-    width: 40vw;
-    box-shadow: 0px 2px 17px 2px grey;
-    height: 25vh;
+    width: 35vw;
+    box-shadow:0px 2px 20px 0.1px rgb(45 45 45);
+    height: 16vw;
     display: flex;
     align-items: center;
     columns: 3;
@@ -19,7 +19,8 @@
 .divtrack{
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
-    gap: 20px;
+    gap: 50px;
+    row-gap: 5px
 }
 .imgTrack{
     width: 10vw;
@@ -29,22 +30,72 @@
     display: flex;
     width: 80%;
     margin: 2%;
+    margin-right: 30px;
 }
 .divTextTrack{
+    font-size: 1vw;
     margin: 2%;
     width: auto;
+    align-content: center;
+    position: absolute;
 }
 #details{
-    font-size: 15px;
+    font-size: 1vw;
 }
 .numTrack{
     background: linear-gradient(to right, #ffffff3d, #0000ff00);/* degradado izquierda → derecha */
     -webkit-background-clip: text;  
     color: transparent;      
-    font-size: 30vh;
+    font-size: 27vw;
     margin: 0;
     height: min-content;
     align-items: center;
-    margin-top: 5%;
+    display: flex;
+    margin-bottom: 4vh;
     margin-right: 5%;
+    width: 100%;
+}
+.num10Track{
+    font-size: 25vw;
+    display: inline-block;
+    letter-spacing: -50px;
+    margin-left: -10%;
+}
+.divNum{
+    filter: blur(2px);
+    margin-left: -7%;
+}
+@media screen and (max-width: 768px) {
+    #details{
+        font-size: 2vw;
+    }
+    .divtrack{
+        grid-template-columns:none
+    }
+    .track{
+        width: 70vw;
+        height: 15vh;
+    }
+    .numTrack{
+        width: 100%;
+        font-size: 50vw;
+        letter-spacing: 0;
+    }
+    .divImg{
+        /* width: 50%; */
+        margin-right: 10px;
+    }
+    .imgTrack{
+        width: 25vw;
+    }
+    .divNum{
+        margin-right: 5%;
+    }
+    .divTextTrack{
+        font-size: 2vw;
+    }
+    .num10Track{
+        font-size: 50vw;
+        letter-spacing: -25px;
+    }
 }

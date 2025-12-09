@@ -19,7 +19,13 @@ function TopTracks() {
           {tracks.map((t, i) => (
             <div className='capsuleTrack'>
               <div className='track' key={i}>
-                <div ><p className='numTrack'>{i+1}</p></div>
+                <div className='divNum'>
+                  <p
+                    className={`numTrack ${i + 1 === 10 ? "num10Track" : ""}`}
+                  >
+                    {i + 1}
+                  </p>
+                </div>
                 <div className='divTextTrack'>
                   <h2>{t.name}</h2>
                   <div id='details'><p>{t.artists}</p><p>{t.album.name}</p></div>
