@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Fran0004/DataMusic/static/css/main.6b286001.css",
+    "main.js": "/Fran0004/DataMusic/static/js/main.4de3bb11.js",
+    "static/js/453.2f590233.chunk.js": "/Fran0004/DataMusic/static/js/453.2f590233.chunk.js",
+    "index.html": "/Fran0004/DataMusic/index.html",
+    "main.6b286001.css.map": "/Fran0004/DataMusic/static/css/main.6b286001.css.map",
+    "main.4de3bb11.js.map": "/Fran0004/DataMusic/static/js/main.4de3bb11.js.map",
+    "453.2f590233.chunk.js.map": "/Fran0004/DataMusic/static/js/453.2f590233.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b286001.css",
+    "static/js/main.4de3bb11.js"
+  ]
+}
