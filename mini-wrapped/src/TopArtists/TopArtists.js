@@ -14,7 +14,21 @@ function TopArtists() {
   const titleRef = useRef(null);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/top-artists')
+
+    const isProd = process.env.NODE_ENV === "production";
+    const isGhPages = window.location.hostname.includes('github.io');
+    
+    let url;
+    
+    if (isProd || isGhPages) {
+      // En producción/GitHub Pages
+      url = `${process.env.PUBLIC_URL}/data/artists.json`;
+    } else {
+      // En desarrollo local
+      url = "http://127.0.0.1:8000/top-artists";
+    }
+
+    axios.get(url)
       .then(res => setArtist(res.data))
       .catch(err => console.error(err));
   }, []);
