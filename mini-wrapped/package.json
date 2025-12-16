@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
-  "homepage": "https://github.com/Fran0004/DataMusic",
+  "homepage": "https://github.com/Fran0004/DataMusic/",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -13,11 +13,13 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "gh-pages": "^6.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && node scripts/copy-to-docs.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
