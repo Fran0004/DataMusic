@@ -6,6 +6,20 @@ function TopTracks() {
   const [tracks, setTracks] = useState([]);
 
   useEffect(() => {
+      const isProd = process.env.NODE_ENV === "production";
+    const isGhPages = window.location.hostname.includes('github.io');
+    
+    let url;
+    
+    if (isProd || isGhPages) {
+      // En producción/GitHub Pages
+      url = `https://fran0004.github.io/DataMusic/data/tracks.json`;
+    } else {
+      // En desarrollo local
+      console.log(`https://fran0004.github.io/DataMusic/data/tracks.json`);
+      url = "http://127.0.0.1:8000/top-tracks";
+    }
+
     axios.get('http://127.0.0.1:8000/top-tracks')
       .then(res => setTracks(res.data))
       .catch(err => console.error(err));

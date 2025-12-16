@@ -22,10 +22,10 @@ function TopArtists() {
     
     if (isProd || isGhPages) {
       // En producción/GitHub Pages
-      url = `/data/artists.json`;
+      url = `https://fran0004.github.io/DataMusic/data/artists.json`;
     } else {
       // En desarrollo local
-      console.log(`${process.env.PUBLIC_URL}`);
+      console.log(`https://fran0004.github.io/DataMusic/data/artists.json`);
       url = "http://127.0.0.1:8000/top-artists";
     }
 
