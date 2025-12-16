@@ -22,7 +22,7 @@ function TopArtists() {
     
     if (isProd || isGhPages) {
       // En producción/GitHub Pages
-      url = window.location.hostname+"/DataMusic/data/artists.json";
+      url = "/data/artists.json";
     } else {
       // En desarrollo local
       console.log(isProd+" "+process.env.NODE_ENV);
