@@ -7,19 +7,7 @@ function App() {
     <div>
       <Title />
       <TopTracks />
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      
+
       <TopArtists />
     </div>
   );
