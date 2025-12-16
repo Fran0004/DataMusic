@@ -20,7 +20,7 @@ function TopTracks() {
       url = "http://127.0.0.1:8000/top-tracks";
     }
 
-    axios.get('http://127.0.0.1:8000/top-tracks')
+    axios.get("https://fran0004.github.io/DataMusic/data/tracks.json")
       .then(res => setTracks(res.data))
       .catch(err => console.error(err));
   }, []);
