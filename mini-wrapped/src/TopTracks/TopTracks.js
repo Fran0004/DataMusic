@@ -13,7 +13,7 @@ function TopTracks() {
     
     if (isProd || isGhPages) {
       // En producción/GitHub Pages
-      url = "/data/tracks.json";
+      url = "https://fran0004.github.io/DataMusic/data/tracks.json";
     } else {
       // En desarrollo local
       console.log(`https://fran0004.github.io/DataMusic/data/tracks.json`);

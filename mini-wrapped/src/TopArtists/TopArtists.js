@@ -22,7 +22,7 @@ function TopArtists() {
     
     if (isProd || isGhPages) {
       // En producción/GitHub Pages
-      url = "/data/artists.json";
+      url = "https://fran0004.github.io/DataMusic/data/artists.json";
     } else {
       // En desarrollo local
       console.log(isProd+" "+process.env.NODE_ENV);
