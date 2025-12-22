@@ -11,7 +11,7 @@
 #TopArtist{
   display: flex;
   justify-content: center; /* centra horizontalmente */
-  height: 400vh;       /* altura de la ventana */
+  height: 480vh;       /* altura de la ventana */
   margin: 0;
   position: sticky;
   top: 50%;        
@@ -25,7 +25,7 @@
   /* NO usar grid aquí */
 }
 .emptyItemList{
-  width: 20vw;
+  width: 40vw;
 }
 .artist-card {
   /* border: 1px solid #ccc; */
@@ -59,7 +59,7 @@
     height: 70vh;
   }
   #TopArtist{
-    height: 300vh;
+    height: 240vh;
   }
   .emptyItemList{
     width: 25vw;

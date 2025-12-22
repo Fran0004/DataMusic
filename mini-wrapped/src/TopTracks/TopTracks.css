@@ -16,6 +16,35 @@
     border-radius: 15px;
     overflow: hidden;
 }
+.track:hover >.divImg> .imgTrack{
+    transform: translateX(-20vw);
+    transition: 1s;
+}
+.track:hover > .divTextTrack{
+    filter: blur(3px);  
+    color: #00000000;
+    transition: 0.8s;
+    position: absolute;
+}
+.imgPlayTrack{
+    width: 8vw;
+    opacity: 0;
+    transform: translateY(3vw);
+    position: absolute;  
+}
+a:hover{
+    animation: resize 3s infinite;
+}
+a{
+    opacity: 0.5;
+    width: 8vw;
+    position: absolute;
+}
+.track:hover >.divImg> a >.imgPlayTrack{
+    opacity: 1;
+    transform: translateY(1vw);
+    transition: 1.2s;
+}
 .divtrack{
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
@@ -24,6 +53,7 @@
 }
 .imgTrack{
     width: 10vw;
+    border: #2d2d2d solid 0.5px;
 }
 .divImg{
     justify-content: flex-end;
@@ -65,6 +95,10 @@
     filter: blur(2px);
     margin-left: -7%;
 }
+.title{
+    font-size: 4vw;
+    font-family:'Times New Roman', Times, serif
+}
 @media screen and (max-width: 768px) {
     #details{
         font-size: 2vw;
@@ -75,6 +109,15 @@
     .track{
         width: 70vw;
         height: 15vh;
+    }
+    .track:hover >.divImg{
+        margin-right: 15vw;
+    }
+    .track:hover >.imgPlayTrack{
+        transform: translateY(5vw);
+    }
+    .imgPlayTrack{
+        width: 15vw;
     }
     .numTrack{
         width: 100%;
@@ -98,4 +141,9 @@
         font-size: 50vw;
         letter-spacing: -25px;
     }
+}
+@keyframes resize {
+  0% {opacity: 0.5;}
+  50%{opacity: 1;}
+  100%{opacity: 0.5;}
 }
