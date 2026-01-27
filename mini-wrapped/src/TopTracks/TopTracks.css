@@ -6,18 +6,23 @@
     width: 100%;
     margin: 5%;
 }
+
 .track{
     width: 35vw;
-    box-shadow:0px 2px 20px 0.1px rgb(45 45 45);
+    box-shadow:0px 2px 20px 0.1px rgba(255, 255, 255, 0.103);
     height: 16vw;
     display: flex;
     align-items: center;
     columns: 3;
     border-radius: 15px;
     overflow: hidden;
+    backdrop-filter: blur(30px);
+    
 }
+
 .track:hover >.divImg> .imgTrack{
     transform: translateX(-20vw);
+    filter: blur(2px);
     transition: 1s;
 }
 .track:hover > .divTextTrack{
@@ -29,7 +34,6 @@
 .imgPlayTrack{
     width: 8vw;
     opacity: 0;
-    transform: translateY(3vw);
     position: absolute;  
 }
 a:hover{
@@ -49,11 +53,13 @@ a{
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
     gap: 50px;
-    row-gap: 5px
+    row-gap: 5px;
 }
 .imgTrack{
     width: 10vw;
+    border-radius: 10%;
     border: #2d2d2d solid 0.5px;
+    transition:all 1s ease-out ;
 }
 .divImg{
     justify-content: flex-end;
@@ -96,8 +102,8 @@ a{
     margin-left: -7%;
 }
 .title{
-    font-size: 4vw;
-    font-family:'Times New Roman', Times, serif
+    font-size: 2vw;
+    margin-left: 5vw;
 }
 @media screen and (max-width: 768px) {
     #details{

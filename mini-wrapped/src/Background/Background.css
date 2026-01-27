@@ -1,0 +1,63 @@
+
+
+.ps3-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #081624,
+    #133252,
+    #1b4770
+  );
+  overflow: hidden;
+   z-index: -1;
+}
+
+/* Olas */
+.wave {
+  position: absolute;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 150%;
+    top: 40%;
+  border-radius: 45%;
+  opacity: 0.9;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.336),
+    transparent 70%
+  );
+  animation: wave 10s linear infinite;
+}
+
+.wave1 {
+  animation-duration: 30s;
+    width: 120%;
+
+}
+
+.wave2 {
+  animation-duration: 50s;
+  opacity: 0.5;
+}
+.wave3 {
+  animation-duration: 90s;
+  opacity: 0.8;
+  width: 120%;
+   background: radial-gradient(
+    ellipse at center,
+    rgba(186, 165, 235, 0.651),
+    transparent 70%);
+}
+
+@keyframes wave {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

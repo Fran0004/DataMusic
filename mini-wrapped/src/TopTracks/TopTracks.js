@@ -28,7 +28,7 @@ function TopTracks() {
 
   return (
      <section>
-      <h2 className='title'>🎧 Tus Top Tracks</h2>
+      <h2 className='title'>🎧Top Tracks</h2>
       <div id='TopTrack'>
         <div className='divtrack'>
           {tracks.map((t, i) => (

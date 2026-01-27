@@ -102,7 +102,7 @@ useLayoutEffect(() => {
               if (imagen) {
                 // Cambia el box-shadow dinámicamente según la distancia (opcional)
                 const shadowIntensity = (1 - distance / maxDistance) * 100; // opcional
-                imagen.style.boxShadow = `0 0 ${shadowIntensity}px #d1bcdb94`;
+                imagen.style.boxShadow = `0 0 ${shadowIntensity}px rgba(237, 197, 255, 0.36)`;
   }
 
 
@@ -143,7 +143,7 @@ useLayoutEffect(() => {
 
   return (
     <section>
-    <h1 id='title'  ref={titleRef} >🎧 Tus Top Artists</h1>
+    <h1 id='title'  ref={titleRef} >🎧Top Artists</h1>
     <div id='TopArtist'>
       <div id='contArtists' ref={contRef}>
         <div className='lista' ref={listaRef} >

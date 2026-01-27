@@ -47,6 +47,7 @@
 }
 #title{
   position: sticky;
+  margin-left: 5vw;
   top: 5vh;
   z-index: 100;
   opacity: 0;
@@ -67,7 +68,7 @@
   .artist-card img {
     width: 40vw;
     height: 40vw;
-    color: #e6afff94;
+    color: #ecc9fc63;
   }
   .artist-card{
     width: 30vw;
