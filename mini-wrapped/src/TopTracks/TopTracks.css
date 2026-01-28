@@ -112,6 +112,9 @@ a{
     .divtrack{
         grid-template-columns:none
     }
+    .title{
+        font-size: 7vw;
+    }
     .track{
         width: 70vw;
         height: 15vh;

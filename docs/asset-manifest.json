@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/DataMusic/static/css/main.ccf2c078.css",
-    "main.js": "/DataMusic/static/js/main.315a1e7f.js",
-    "static/js/206.6a84d697.chunk.js": "/DataMusic/static/js/206.6a84d697.chunk.js",
-    "index.html": "/DataMusic/index.html"
+    "main.css": "https://fran0004.github.io/DataMusic/static/css/main.62b5a6fa.css",
+    "main.js": "https://fran0004.github.io/DataMusic/static/js/main.6eccbaf6.js",
+    "static/js/206.6a84d697.chunk.js": "https://fran0004.github.io/DataMusic/static/js/206.6a84d697.chunk.js",
+    "index.html": "https://fran0004.github.io/DataMusic/index.html"
   },
   "entrypoints": [
-    "static/css/main.ccf2c078.css",
-    "static/js/main.315a1e7f.js"
+    "static/css/main.62b5a6fa.css",
+    "static/js/main.6eccbaf6.js"
   ]
 }
