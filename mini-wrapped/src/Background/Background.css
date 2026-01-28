@@ -20,12 +20,12 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  width: 120vw;
-  height: 200vh;
-  top: 50%;
+  width: 130vw;
+  height: 230vh;
+  top: 60%;
   border-radius: 45%;
   opacity: 1;
-  left: -5%;
+  left: -10%;
   background: radial-gradient(
     ellipse at center,
     rgb(255, 255, 255),
