@@ -6,7 +6,6 @@
     width: 100%;
     margin: 5%;
 }
-
 .track{
     width: 35vw;
     box-shadow:0px 2px 20px 0.1px rgba(255, 255, 255, 0.103);
@@ -17,10 +16,13 @@
     border-radius: 15px;
     overflow: hidden;
     backdrop-filter: blur(30px);
-    
 }
-
 .track:hover >.divImg> .imgTrack{
+    transform: translateX(-20vw);
+    filter: blur(2px);
+    transition: 1s;
+}
+.track:hover >.divImg> .img10Track{
     transform: translateX(-20vw);
     filter: blur(2px);
     transition: 1s;
@@ -56,6 +58,12 @@ a{
     row-gap: 5px;
 }
 .imgTrack{
+    width: 10vw;
+    border-radius: 10%;
+    border: #2d2d2d solid 0.5px;
+    transition:all 1s ease-out ;
+}
+.img10Track{
     width: 10vw;
     border-radius: 10%;
     border: #2d2d2d solid 0.5px;
@@ -123,10 +131,13 @@ a{
         margin-right: 15vw;
     }
     .track:hover >.imgPlayTrack{
-        transform: translateY(5vw);
+        /* transform: translateY(5vw); */
     }
     .imgPlayTrack{
         width: 15vw;
+        top: 4vw;
+        position: absolute;
+        left: -12vw;
     }
     .numTrack{
         width: 100%;
@@ -134,7 +145,8 @@ a{
         letter-spacing: 0;
     }
     .divImg{
-        /* width: 50%; */
+        width: auto;
+        margin-left: 20%;
         margin-right: 10px;
     }
     .imgTrack{
@@ -147,8 +159,17 @@ a{
         font-size: 2vw;
     }
     .num10Track{
-        font-size: 50vw;
+        font-size: 40vw;
         letter-spacing: -25px;
+    }
+    .img10Track{
+        width: 25vw;
+    }
+    .track:hover >.divImg> .img10Track{
+        transform: translateX(-30vw);
+    }
+    .track:hover >.divImg> .imgTrack{
+        transform: translateX(-30vw);
     }
 }
 @keyframes resize {

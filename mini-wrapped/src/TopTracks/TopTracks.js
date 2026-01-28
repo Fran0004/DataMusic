@@ -46,7 +46,7 @@ function TopTracks() {
                   <div id='details'><p>{t.artists}</p><p>{t.album.name}</p></div>
                 </div>
                 <div className='divImg'>
-                  <img className='imgTrack' src={t.album.images[0].url} alt=''></img>
+                  <img className={` ${i + 1 === 10 ? "img10Track" : "imgTrack"}`} src={t.album.images[0].url} alt=''></img>
                   <a href={t.external_urls} >
                     <img className='imgPlayTrack' src={imgPlay} alt=''></img>
                   </a>
