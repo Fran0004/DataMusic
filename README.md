@@ -1,4 +1,4 @@
-# 🎧 Spotify Mini Wrapped
+# 🎧 DataMusic Mini Wrapped
 
 Este repositorio ha sido creado con el objetivo de **mejorar y practicar mis habilidades en desarrollo Front End**, utilizando **React** como tecnología principal.
 
